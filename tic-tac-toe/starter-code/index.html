@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Tic Tac Toe</title>
+  </head>
+  <body>
+    <main>
+      <section class="gameMenu">
+        <img src="./assets/logo.svg" alt="logo" />
+        <div class="choose-mark flex">
+          <h1 class="fs-600 uppercase">Pick player 1's mark</h1>
+          <div class="mark-container flex">
+            <label class="labels">
+              <input type="radio" name="marks" id="" value="x" checked />
+              <span class="checkmark">
+                <svg
+                  class="Xsvg"
+                  width="64"
+                  height="64"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="XsvgPath"
+                    d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z"
+                    fill="hsl( var(--clr-silver) )"
+                  />
+                </svg>
+              </span>
+            </label>
+
+            <label class="labels" for="o-mark">
+              <input class="radio" type="radio" name="marks" id="" value="o" />
+              <span class="checkmark">
+                <svg
+                  class="Osvg"
+                  width="64"
+                  height="64"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    class="OsvgPAth"
+                    d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"
+                    fill="hsl( var(--clr-silver) )"
+                  />
+                </svg>
+              </span>
+            </label>
+          </div>
+          <p class="text-silver">Remember: X goes first</p>
+        </div>
+        <button class="cpuBtn">New Game (vs CPU)</button>
+        <button class="playerBtn">New Game (vs player)</button>
+      </section>
+
+      <section class="gameBoard">
+        <div class="game-board-header flex">
+          <img
+            class="game-board-header-logo"
+            src="./assets/logo.svg"
+            alt="logo"
+          />
+          <div class="turn">
+            <img class="Xturn" src="./assets/icon-x-turn.svg" alt="" />
+            <p class="">turn</p>
+          </div>
+          <button class="restart">
+            <img src="./assets/icon-restart.svg" alt="restart icon" />
+          </button>
+        </div>
+
+        <div class="boxes">
+          <div class="box box0 hoverClassX"></div>
+          <div class="box box1 hoverClassX"></div>
+          <div class="box box2 hoverClassX"></div>
+          <div class="box box3 hoverClassX"></div>
+          <div class="box box4 hoverClassX"></div>
+          <div class="box box5 hoverClassX"></div>
+          <div class="box box6 hoverClassX"></div>
+          <div class="box box7 hoverClassX"></div>
+          <div class="box box8 hoverClassX"></div>
+        </div>
+
+        <div class="scores fs-500 uppercase text-dark">
+          <div class="box-score your-score">
+            <p class="fs-500 uppercase text-dark">X (You)</p>
+            <p class="fs-800">0</p>
+          </div>
+
+          <div class="box-score ties">
+            <p>Ties<br /><span id="" class="fs-800">0</span></p>
+          </div>
+
+          <div class="box-score cpu-score">
+            <p id="" class="fs-500 uppercase text-dark">O (CPU)</p>
+            <p id="" class="fs-800">0</p>
+          </div>
+        </div>
+
+        <div class="modal">
+          <div class="endGameModal">
+            <p class="uppercase">Oh no, you lost...</p>
+
+            <div class="flex">
+              <img src="./assets/icon-o.svg" alt="winner-mark" />
+              <h2 class="fs-900 uppercase">takes the round</h2>
+            </div>
+            <div>
+              <button class="quitBtn fs-600 uppercase text-dark">Quit</button>
+              <button class="nextBtn fs-600 uppercase text-dark">Next Round</button>
+            </div>
+          </div>
+
+          <div class="restartGame">
+            <p class="">restart game?</p>
+            <div>
+              <button class="cancelBtn fs-600 uppercase text-dark">No, cancel</button>
+              <button class="cancelBtn fs-600 uppercase text-dark">Yes, restart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="cpuThink">
+        <p id=""></p>
+      </div>
+    </main>
+  </body>
+</html>
