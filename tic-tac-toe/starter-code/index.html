@@ -23,13 +23,13 @@
   </head>
   <body>
     <main>
-      <section class="gameMenu">
+      <section class="gameMenu visible">
         <img src="./assets/logo.svg" alt="logo" />
         <div class="choose-mark flex">
           <h1 class="fs-600 uppercase">Pick player 1's mark</h1>
           <div class="mark-container flex">
-            <label class="labels">
-              <input type="radio" name="marks" id="" value="x" checked />
+            <label class="labels" for="x-mark">
+              <input type="radio" name="marks" id="x-mark" value="X" checked />
               <span class="checkmark">
                 <svg
                   class="Xsvg"
@@ -47,7 +47,7 @@
             </label>
 
             <label class="labels" for="o-mark">
-              <input class="radio" type="radio" name="marks" id="" value="o" />
+              <input class="radio" type="radio" name="marks" id="o-mark" value="O" />
               <span class="checkmark">
                 <svg
                   class="Osvg"
@@ -66,8 +66,8 @@
           </div>
           <p class="text-silver">Remember: X goes first</p>
         </div>
-        <button class="cpuBtn">New Game (vs CPU)</button>
-        <button class="playerBtn">New Game (vs player)</button>
+        <button class="cpuBtn" id="newGame-cpu">New Game (vs CPU)</button>
+        <button class="playerBtn" id="newGame-player">New Game (vs player)</button>
       </section>
 
       <section class="gameBoard">
@@ -87,30 +87,30 @@
         </div>
 
         <div class="boxes">
-          <div class="box box0 hoverClassX"></div>
-          <div class="box box1 hoverClassX"></div>
-          <div class="box box2 hoverClassX"></div>
-          <div class="box box3 hoverClassX"></div>
-          <div class="box box4 hoverClassX"></div>
-          <div class="box box5 hoverClassX"></div>
-          <div class="box box6 hoverClassX"></div>
-          <div class="box box7 hoverClassX"></div>
-          <div class="box box8 hoverClassX"></div>
+          <div class="box hoverClassX" data-box="1"></div>
+          <div class="box hoverClassX" data-box="2"></div>
+          <div class="box hoverClassX" data-box="3"></div>
+          <div class="box hoverClassX" data-box="4"></div>
+          <div class="box hoverClassX" data-box="5"></div>
+          <div class="box hoverClassX" data-box="6"></div>
+          <div class="box hoverClassX" data-box="7"></div>
+          <div class="box hoverClassX" data-box="8"></div>
+          <div class="box hoverClassX" data-box="9"></div>
         </div>
 
         <div class="scores fs-500 uppercase text-dark">
           <div class="box-score your-score">
-            <p class="fs-500 uppercase text-dark">X (You)</p>
-            <p class="fs-800">0</p>
+            <p class="fs-500 uppercase text-dark your-score-id">X (You)</p>
+            <p class="fs-800" data-score>0</p>
           </div>
 
           <div class="box-score ties">
-            <p>Ties<br /><span id="" class="fs-800">0</span></p>
+            <p>Ties<br /><span class="fs-800" data-score>0</span></p>
           </div>
 
           <div class="box-score cpu-score">
-            <p id="" class="fs-500 uppercase text-dark">O (CPU)</p>
-            <p id="" class="fs-800">0</p>
+            <p class="fs-500 uppercase text-dark player2-score-id">O (CPU)</p>
+            <p class="fs-800" data-score>0</p>
           </div>
         </div>
 
@@ -138,9 +138,9 @@
         </div>
       </section>
 
-      <div class="cpuThink">
-        <p id=""></p>
-      </div>
+      <!-- <div class="cpuThink">
+        <p></p>
+      </div> -->
     </main>
   </body>
 </html>

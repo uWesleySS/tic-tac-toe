@@ -224,6 +224,7 @@ select {
 /*     Game menu     */
 
 .gameMenu {
+  display: none;
   text-align: center;
 }
 
@@ -335,6 +336,7 @@ select {
   border: none;
   text-align: center;
   font-weight: 700;
+  cursor: pointer;
   padding-bottom: 10px;
 }
 
@@ -441,18 +443,25 @@ select {
   border-radius: 10px;
   width: 6rem;
   height: 6rem;
+  background-image: var(--background-img);
+  background-repeat: no-repeat;
+  background-position: 15px 13px;
+}
+
+.box.X-marked {
+  --background-img: url(./assets/icon-x.svg);
+}
+
+.box.O-marked {
+  --background-img: url(./assets/icon-o.svg);
 }
 
 .hoverClassX:hover {
   background-image: url(./assets/icon-x-outline.svg);
-  background-repeat: repeat;
-  background-position: 15px 13px;
 }
 
 .hoverClassO:hover {
   background-image: url(./assets/icon-o-outline.svg);
-  background-repeat: repeat;
-  background-position: 15px 13px;
 }
 
 .scores {
@@ -546,6 +555,10 @@ select {
   margin-right: 1rem;
 }
 
+.ties button[data-score]{
+  font-size: 45px;
+}
+
 .quitBtn:hover {
   background-color: hsl(var(--clr-silverHover));
 }
@@ -595,4 +608,8 @@ select {
 
 .restartBtn:hover {
   background-color: hsl(var(--clr-orangeHover));
+}
+
+.visible {
+  display: block;
 }
