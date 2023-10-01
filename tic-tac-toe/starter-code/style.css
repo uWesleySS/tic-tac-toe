@@ -555,10 +555,6 @@ select {
   margin-right: 1rem;
 }
 
-.ties button[data-score]{
-  font-size: 45px;
-}
-
 .quitBtn:hover {
   background-color: hsl(var(--clr-silverHover));
 }
